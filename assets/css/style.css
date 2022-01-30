@@ -1,0 +1,185 @@
+html {
+    font-family: "Candara", cursive;
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*                              EXERCISE SIDEBAR                              */
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/* ----------------------- The sidebar menu  ---------------------- */
+
+.sidenav {
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    width: 250px;
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 20px;
+    padding-right: 25px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+
+/* ------------------------ The navigation menu links ----------------------- */
+
+.sidenav a {
+    padding: 6px 10px 6px 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #818181;
+    display: block;
+}
+
+.sidenav-header {
+    color: #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 20px;
+}
+
+
+/* ------ When you mouse over the navigation links, change their color ------ */
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+
+/* --------------------------- Style page content --------------------------- */
+
+body {
+    margin-left: 270px;
+    margin-top: 20px;
+    /* Same as the width of the sidebar */
+    padding: 10px 30px;
+}
+
+ol {
+    width: 100%;
+    color: #818181;
+}
+
+ol li {
+    margin-left: -25px;
+}
+
+.back-home {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.back-home a {
+    text-decoration: none;
+    color: white;
+}
+
+.back-home a {
+    text-decoration: none;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*                               EXERCISE TABLE                               */
+
+
+/* -------------------------------------------------------------------------- */
+
+td,
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*                                    FORM                                    */
+
+
+/* -------------------------------------------------------------------------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+label {
+    margin-top: 1em;
+}
+
+input[type='submit'] {
+    margin-top: 1em;
+    background-color: rgb(6, 63, 44);
+    border: 1px solid grey;
+    padding: 1em;
+    border-radius: 1em;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+button {
+    background-color: rgb(6, 63, 44);
+    color: white;
+    border-radius: 0.5em;
+    border: none;
+    padding: 0.5em;
+}
