@@ -1,7 +1,7 @@
 <?php
 return [
     'database'=>[
-        'dbname'=>'learnmysql',
+        'dbname'=>'calendar_application',
         'connection' => 'mysql:host=127.0.0.1',
         'username' => 'root',
         'password' => '',

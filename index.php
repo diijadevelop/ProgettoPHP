@@ -11,6 +11,5 @@ require('vendor/autoload.php');
 require('core/init.php');
 
 
-
 Router::load('routes.php')
     ->direct(Request::uri(), Request::method());
