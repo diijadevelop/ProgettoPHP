@@ -9,8 +9,7 @@ class ComposerStaticInit3db89a73a05286eff0936421c6adf272
     public static $classMap = array (
         'App\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/controllers/PagesController.php',
         'App\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/controllers/UsersController.php',
-        'App\\Models\\Libro' => __DIR__ . '/../..' . '/app/models/Libro.php',
-        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/models/Post.php',
+        'App\\Models\\Family' => __DIR__ . '/../..' . '/app/models/Family.php',
         'ComposerAutoloaderInit3db89a73a05286eff0936421c6adf272' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit3db89a73a05286eff0936421c6adf272' => __DIR__ . '/..' . '/composer/autoload_static.php',
@@ -20,13 +19,6 @@ class ComposerStaticInit3db89a73a05286eff0936421c6adf272
         'Core\\Database\\QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
         'Core\\Router\\Request' => __DIR__ . '/../..' . '/core/router/Request.php',
         'Core\\Router\\Router' => __DIR__ . '/../..' . '/core/router/Router.php',
-        'MyIterator' => __DIR__ . '/../..' . '/app/views/exercise.view.php',
-        'Select' => __DIR__ . '/../..' . '/app/views/exercise.view.php',
-        'Test' => __DIR__ . '/../..' . '/app/views/exercise.view.php',
-        'Test2' => __DIR__ . '/../..' . '/app/views/exercise.view.php',
-        'Test3' => __DIR__ . '/../..' . '/app/views/exercise.view.php',
-        'error_txt' => __DIR__ . '/../..' . '/app/views/exercise.view.php',
-        'message' => __DIR__ . '/../..' . '/app/views/exercise.view.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -1,16 +1,20 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 body {
-    font-family: "Roboto", sans-serif;
-    /* background-color: rgb(203, 219, 219); */
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(203, 219, 219);
+    /* background-color: #202020; */
+    background: url("./../img/bg.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 * {
     margin: 0;
     padding: 0;
-}
-
-i {
-    margin-right: 10px;
+    box-sizing: border-box;
 }
 
 
@@ -22,193 +26,24 @@ i {
 
 /* -------------------------------------------------------------------------- */
 
-.container .navbar {
-    border-radius: 1em;
-    padding-top: 2em;
-    padding-left: 2em;
-    padding-right: 2em;
-    margin-top: 1em;
+.navbar a {
+    color: rgb(203, 219, 219);
 }
 
-.navbar-logo {
-    color: rgb(32, 32, 34);
-    font-weight: bolder;
-    padding-bottom: 1rem;
+.nav-item a:hover {
+    color: rgba(18, 191, 18, 1);
 }
 
-.navbar-logo:hover {
-    color: inherit;
+.navbar-brand,
+.navbar-brand:hover {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3.5rem;
+    color: rgb(203, 219, 219);
 }
 
-.navbar-mainbg {
-    background-color: #c2d3e2;
-    padding: 1em 0 0 0;
-}
-
-#navbarSupportedContent {
-    overflow: hidden;
-    position: relative;
-}
-
-#navbarSupportedContent ul {
-    padding: 0px;
-    margin: 0px;
-}
-
-#navbarSupportedContent ul li a i {
-    margin-right: 10px;
-}
-
-#navbarSupportedContent li {
-    list-style-type: none;
-    float: left;
-}
-
-#navbarSupportedContent ul li a {
-    color: rgb(32, 32, 34);
-    text-decoration: none;
-    font-size: 15px;
-    display: block;
-    padding: 20px 20px;
-    transition-duration: 0.6s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    position: relative;
-}
-
-#navbarSupportedContent>ul>li.active>a {
-    color: #2c2e30;
-    background-color: transparent;
-    transition: all 0.7s;
-}
-
-#navbarSupportedContent a:not(:only-child):after {
-    content: "\f105";
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 14px;
-    font-family: "Font Awesome 5 Free";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    transition: 0.5s;
-}
-
-#navbarSupportedContent .active>a:not(:only-child):after {
-    transform: rotate(90deg);
-}
-
-.hori-selector {
-    display: inline-block;
-    position: absolute;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    transition-duration: 0.6s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    background-color: #fff;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    margin-top: 10px;
-}
-
-.hori-selector .right,
-.hori-selector .left {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background-color: #fff;
-    bottom: 10px;
-}
-
-.hori-selector .right {
-    right: -25px;
-}
-
-.hori-selector .left {
-    left: -25px;
-}
-
-.hori-selector .right:before,
-.hori-selector .left:before {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #c2d3e2;
-}
-
-.hori-selector .right:before {
-    bottom: 0;
-    right: -25px;
-}
-
-.hori-selector .left:before {
-    bottom: 0;
-    left: -25px;
-}
-
-@media (min-width: 992px) {
-    .navbar-expand-custom {
-        -ms-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-    }
-    .navbar-expand-custom .navbar-nav {
-        -ms-flex-direction: row;
-        flex-direction: row;
-    }
-    .navbar-expand-custom .navbar-toggler {
-        display: none;
-    }
-    .navbar-expand-custom .navbar-collapse {
-        display: -ms-flexbox !important;
-        display: flex !important;
-        -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-    }
-}
-
-@media (max-width: 991px) {
-    #navbarSupportedContent ul li a {
-        padding: 12px 30px;
-    }
-    .hori-selector {
-        margin-top: 0px;
-        margin-left: 10px;
-        border-radius: 0;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
-    }
-    .hori-selector .left,
-    .hori-selector .right {
-        right: 10px;
-    }
-    .hori-selector .left {
-        top: -25px;
-        left: auto;
-    }
-    .hori-selector .right {
-        bottom: -25px;
-    }
-    .hori-selector .left:before {
-        left: -25px;
-        top: -25px;
-    }
-    .hori-selector .right:before {
-        bottom: -25px;
-        left: -25px;
-    }
-    .container .navbar {
-        padding: 1em 0 0 0;
-        margin: 1em 0 0;
-        width: 100%;
-    }
-    .navbar-logo {
-        margin-left: 2rem;
+@media only screen and(max-width:700px) {
+    nav .navbar {
+        margin: 0 1em;
     }
 }
 
@@ -221,10 +56,61 @@ i {
 
 /* -------------------------------------------------------------------------- */
 
-.container .main {
+.main {
     padding: 2.5em;
+    max-width: 780px;
+    margin: 0 auto;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.342) 0px 20px 30px -10px;
+    background-color: rgba(0, 0, 0, 0.842)
 }
 
-.container .main h1 {
+.main h1 {
     font-weight: bolder;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*                                   Homepage                                 */
+
+
+/* -------------------------------------------------------------------------- */
+
+.card-wrapper i {
+    font-size: 3em;
+}
+
+.card-wrapper .card {
+    border-radius: 1.5em;
+}
+
+.card-wrapper .card:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    background: linear-gradient(123deg, rgba(0, 94, 0, 1) 0%, rgba(18, 191, 18, 1) 100%);
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*                                   Family Page                              */
+
+
+/* -------------------------------------------------------------------------- */
+
+#new_row_form,
+.updateRecordForm {
+    display: none;
+}
+
+.table,
+td {
+    color: rgb(203, 219, 219);
+    vertical-align: baseline;
+    border: none;
 }

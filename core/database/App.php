@@ -1,7 +1,7 @@
 <?php 
 
 namespace Core\Database;
-use FFI\Exception;
+use Exception;
 
 class App
 {

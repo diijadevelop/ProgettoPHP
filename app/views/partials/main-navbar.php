@@ -1,51 +1,28 @@
 <?php require "head.php" ?>
 
 <body>
-    <div class="container">
-    <nav class="navbar navbar-expand-custom navbar-mainbg">
-            <a class="navbar-brand navbar-logo" href="#">
-                <img src="assets\icons\trash-can.png" width="40" height="40">Trash4Smile</a>
-            <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="page vh-100">
+    <nav class=" navbar navbar-expand-md " role="navigation">
+        <div class="container">
+            <a class="navbar-brand navbar-logo" href="homepage">
+            <img src="assets/icons/trash-bin.png" width="50px">    
+            JoinTrash</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapsed">
             <i class="fas fa-bars text-white"></i>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapsed">
+                <ul class="navbar-nav nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i></i>Dashboard</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Family Members</a>
-                    </li>
+                        <a class="nav-link" href="homepage"><i class="mx-2 fas fa-home"></i></i>Homepage</a>
+                    </li>                    
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
+                        <a class="nav-link" href="dashboard"><i class="mx-2 fas fa-tachometer-alt"></i></i>Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Views</a>
+                        <a class="nav-link" href="family"><i class="mx-2 fas fa-user-edit"></i>Your Crew</a>
                     </li>
                 </ul>
             </div>
+        </div>
         </nav>
-    </div>
-
-
-
-
-
-<!--     
-  <nav class="sidenav">
-    <ul>
-      <div class="sidenav-header">
-        <h1>Menu</h1>
-      </div>
-      <li><a href="homepage">Homepage</a></li>
-      <li><a href="">Edit</a>
-          <li><a href="">Family</a></li>
-          <li><a href="">Calendar</a></li>
-      </li>
-      <li><a href="">Views</a>
-          <li><a href="">Single Day</a></li>
-          <li><a href="">Week</a></li>
-      </li>
-    </ul>
-  </nav> -->
+ 

@@ -6,16 +6,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- /* ------------------------------ Title ------------------------------ */ -->
-  <title><?php echo "Trash4Smile - " . ucwords(basename($_SERVER['PHP_SELF'])); ?></title>
+  <title><?php echo "JoinTrash - " . ucwords(basename($_SERVER['PHP_SELF'])); ?></title>
+  
+  <!-- /* ---------------------------- JQuery --------------------------- */ -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
+  <!-- /* ------------------------------ Boostrap 5 CDN (Popper Included) ------------------------------ */ -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- /* ---------------------------- Custom Stylesheet --------------------------- */ -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
   <!-- /* ------------------------------ Favicon ------------------------------ */ -->
-  <link rel="icon" type="image/x-icon" href="/assets/icons/trash-can.ico">
-  <!-- /* ------------------------------ Boostrap 5 CDN ------------------------------ */ -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="/assets/icons/trash-bin.ico">
+  
   <!-- /* ---------------------------- Font Awesome CDN ---------------------------- */ -->
   <script src="https://kit.fontawesome.com/05be545c9f.js" crossorigin="anonymous"></script>
-  <!-- /* ---------------------------- Custom Stylesheet --------------------------- */ -->
-  <link rel="stylesheet" href="assets/css/style.css"> 
 
 </head>

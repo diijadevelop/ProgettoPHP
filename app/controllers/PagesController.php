@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Controllers;
-
 use Core\Database\App;
-use App\Models\Post;
+// use App\Models\Post;
 
 class PagesController
 {
@@ -12,15 +11,20 @@ class PagesController
         return view('homepage');
     }
 
-    // public function tasks()
-    // {
-    //     $tasks = App::get('database')->selectAll('todos');
-    //     return view('tasks', ['tasks' => $tasks]);
-    // }
+    public function family()
+    {
+        return view('family');
+    }
 
-    // public function form()
+    public function dashboard()
+    {
+
+        return view('dashboard');
+    }
+
+    // public function family_read()
     // {
-    //     return view('form');
+    //     return view('family_read');
     // }
 
     // public function table()
