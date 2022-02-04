@@ -69,6 +69,7 @@
                     <tr scope="row">
                         <td>${i}</td>
                         <td>${member.name}</td>
+                        <td>${member.assigned_to}</td>
                         <td class="text-end">
                             <button onclick="openForm_update()" class="update_btn btn btn-success update_member  mx-2" data-val="${member.id}"><i class="m-1 far fa-edit"></i></button>
                             <button class="delete_btn btn btn-danger delete_member" data-val="${member.id}"><i class="m-1 fas fa-user-minus"></i></button>

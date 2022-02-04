@@ -12,6 +12,7 @@ if($num>0){
         $tmp;
         $tmp['id'] = $row['id'];
         $tmp['name'] = $row['name'];
+        $tmp['assigned_to'] = $row['assigned_to'];
         array_push($data, $tmp);
     }
     echo json_encode($data, JSON_PRETTY_PRINT);
