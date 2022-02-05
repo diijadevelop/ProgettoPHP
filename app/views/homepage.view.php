@@ -1,12 +1,16 @@
 <?php
 require('app/views/partials/head.php');
+require_once "helpers/calendar-view.php";
+
 ?>
 <div class="container d-flex align-items-center min-vh-100">
 
     <div class="main text-center ">
 
-        <div class="header-home mb-4">
-            <img src="assets/icons/trash-bin.png" width="50px">
+        <div class="header-home mb-5">
+            <a class="easter-egg" href="easter-egg">
+                <img class="angry-animate mb-4" src="assets/icons/trash-bin.png" width="50px">
+            </a>
             <a class="navbar-brand ms-3">JoinTrash</a>
         </div>
     
@@ -20,7 +24,7 @@ require('app/views/partials/head.php');
                         <div class="card-body">
                             <h5 class="card-title">Dashboard</h5>
                             <p class="small card-text text-dark fw-bold">Get start and get a look to your calendar!</p>
-                            <a href="dashboard" class="stretched-link"></a>
+                            <a href="dashboard?calendar_view=<?php echo $calendar_view?>" class="stretched-link"></a>
                         </div>
                     </div>
                 </div>

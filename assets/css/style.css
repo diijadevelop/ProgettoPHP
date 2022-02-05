@@ -9,6 +9,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    min-height: 100vh;
 }
 
 * {
@@ -94,6 +95,31 @@ body {
     background: linear-gradient(123deg, rgba(0, 94, 0, 1) 0%, rgba(18, 191, 18, 1) 100%);
 }
 
+.angry-animate:hover {
+    -webkit-animation: rotate 1s linear 0s infinite normal;
+    -moz-animation: rotate 1s linear 0s infinite normal;
+    -ms-animation: rotate 1s linear 0s infinite normal;
+    animation: rotate 1s linear 0s infinite normal;
+}
+
+.easter-egg,
+.easter-egg:hover {
+    color: transparent;
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 /* -------------------------------------------------------------------------- */
 
@@ -113,4 +139,45 @@ td {
     color: rgb(203, 219, 219);
     vertical-align: baseline;
     border: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*                               Dashboard Page                               */
+
+
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 60%;
+        *width: 60%;
+        margin: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 100%;
+        *width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 14.285714285714285714285714285714%;
+        *width: 14.285714285714285714285714285714%;
+    }
+}
+
+.week-row {
+    font-size: 70%;
 }
