@@ -12,3 +12,5 @@ require('core/init.php');
 
 Router::load('routes.php')
     ->direct(Request::uri(), Request::method());
+
+die( trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
