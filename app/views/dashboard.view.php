@@ -68,15 +68,16 @@ $select=App::get('calendar')->read();
         <?php endif ?>
         <?php
         if ($calendar_view === 'Week') : ?>
-            <div class="mt-4 w-100 dashboard-week row seven-cols text-small week-row">
+            <div class="mt-4 dashboard-week row seven-cols text-small week-row">
                 <?php 
                 while($row = $select->fetch(PDO::FETCH_ASSOC)){
                     extract($row);
                     echo "
-                    <div class=\"col-md-1 text-center\">
+                    <div class=\"col-md-1 week-block\">
                     <h5 class=\" fw-bold\">$day</h5>
+                    <hr>
                     <p class=\" small\">We'll going to recycle: </p>
-                    <h5 class=\" fw-bold\">$assigned_garbage</h5>
+                    <h5 class=\" pb-3 fw-bold\">$assigned_garbage</h5>
                     <p class=\"small\">It's the turn of:</p>
                     <h5 class=\" fw-bold\">$assigned_user</h5>
                     <p class=\" d-md-none small muted mt-4\"><i class=\"me-2 fas fa-info-circle\"></i>Click on the waste type for get more informations</p>
