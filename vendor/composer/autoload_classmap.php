@@ -8,7 +8,9 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Controllers\\PagesController' => $baseDir . '/app/controllers/PagesController.php',
     'App\\Controllers\\UsersController' => $baseDir . '/app/controllers/UsersController.php',
+    'App\\Models\\Calendar' => $baseDir . '/app/models/Calendar.php',
     'App\\Models\\Family' => $baseDir . '/app/models/Family.php',
+    'App\\Models\\Garbage' => $baseDir . '/app/models/Garbage.php',
     'ComposerAutoloaderInit3db89a73a05286eff0936421c6adf272' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit3db89a73a05286eff0936421c6adf272' => $vendorDir . '/composer/autoload_static.php',

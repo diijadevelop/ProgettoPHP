@@ -22,6 +22,9 @@ require_once "helpers/calendar-view.php";
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="family"><i class="mx-2 fas fa-user-edit"></i>Your Crew</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="calendar"><i class="mx-2 fas fa-user-edit"></i>Edit Calendar</a>
                         </li>
                     </ul>
                 </div>

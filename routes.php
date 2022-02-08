@@ -1,6 +1,7 @@
 <?php
 //Metodo post per le form con method post
 $router->post('family' , 'PagesController@family');
+$router->post('calendar' , 'PagesController@calendar');
 
 
 //Metodo get per tutti gli altri indirizzi

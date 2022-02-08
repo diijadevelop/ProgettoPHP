@@ -5,7 +5,8 @@ require('../../core/init.php');
 use App\Models\Family;
 use Core\Database\App;
 
-$family = new Family($pdo);
+$family = App::get('family');
+
 $name = $_POST['name'];
 $id = $_POST['id'];
 

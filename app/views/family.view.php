@@ -23,7 +23,7 @@ require('app/views/partials/main-navbar.php');
 
                     <div class="">
                         <button id="insert_btn" class="btn btn-success"><i class="m-1 fas fa-check"></i></button>
-                        <button class="btn btn-danger" onclick="closeForm_insert()"><i class="m-1 fas fa-times"></i></button>
+                        <button class="btn btn-danger" onclick="closeForm_insert();event.preventDefault();"><i class="m-1 fas fa-times"></i></button>
                     </div>
                 </form>
             </div>
@@ -35,7 +35,7 @@ require('app/views/partials/main-navbar.php');
                     </div>
                     <div>
                         <button type="submit" id="updateConfirmBtn" class="btn btn-success"><i class="m-1 fas fa-check"></i></button>
-                        <button class="btn btn-danger" onclick="closeForm_update()"><i class="m-1 fas fa-times"></i></button>
+                        <button class="btn btn-danger" onclick="closeForm_update();event.preventDefault();"><i class="m-1 fas fa-times"></i></button>
                     </div>
                 </form>
             </div>

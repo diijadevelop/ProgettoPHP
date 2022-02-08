@@ -7,10 +7,8 @@ require_once "helpers/calendar-view.php";
 
     <div class="main text-center ">
 
-        <div class="header-home mb-5">
-            <a class="easter-egg" href="easter-egg">
+        <div class="header-home mb-3">
                 <img class="angry-animate mb-4" src="assets/icons/trash-bin.png" width="50px">
-            </a>
             <a class="navbar-brand ms-3">JoinTrash</a>
         </div>
     
@@ -18,7 +16,7 @@ require_once "helpers/calendar-view.php";
         <p class="">Now you can check if it's your turn to take out the garbage &#128513;</p>
         <div class="card-wrapper container-fluid pt-4">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card mb-3">
                         <i class="mt-4 fas fa-tachometer-alt"></i>
                         <div class="card-body">
@@ -28,17 +26,30 @@ require_once "helpers/calendar-view.php";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <!-- Card Dashboard End -->
+                <div class="col-md-3">
                     <div class="card mb-3">
                         <i class="mt-4 fas fa-users"></i>
                         <div class="card-body">
-                            <h5 class="card-title">Edit Your Crew</h5>
+                            <h5 class="card-title">Your Crew</h5>
                             <p class="small card-text text-dark fw-bold">Add a new element to your family.</p>
                             <a href="family" class="stretched-link"></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <!-- Card Edit Your Crew End -->
+                <div class="col-md-3">
+                    <div class="card mb-3">
+                    <i class="mt-4 fas fa-calendar-plus"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Calendar</h5>
+                            <p class="small card-text text-dark fw-bold">Assign members and garbage type.</p>
+                            <a href="calendar" class="stretched-link"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Edit Your Calendar End -->
+                <div class="col-md-3">
                     <div class="card mb-3">
                         <i class="mt-4 fas fa-info-circle"></i>
                         <div class="card-body">
@@ -48,8 +59,11 @@ require_once "helpers/calendar-view.php";
                         </div>
                     </div>
                 </div>
+                <!-- Card Good Info End -->
             </div>
+            <!-- Row End -->
         </div>
+        <!-- Card Container End -->
     </div>
 </div>
 

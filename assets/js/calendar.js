@@ -1,70 +1,137 @@
-$(document).ready(function() {
+const config = {
+    search: false, // Toggle search feature. Default: false
+    creatable: false, // Creatable selection. Default: false
+    clearable: false, // Clearable selection. Default: false
+    multiple: true,
+    maxHeight: "360px", // Max height for showing scrollbar. Default: 360px
+    size: "", // Can be "sm" or "lg". Default ''
+};
+dselect(document.querySelector("#assigned_garbage"), config);
+// Variables
+let calendar;
+let calendarContainer = document.querySelector(" #calendar_container");
+let ConfirmBtn = document.querySelector("#ConfirmBtn");
+let id;
 
-    $('#calendar').fullCalendar({
+calendarGenerator();
+ConfirmBtn.addEventListener("click", updateRecord);
+
+// Select all and show a dynamic table
+
+function calendarGenerator() {
+    fetch("./app/calendar/read.php", {
+        method: "POST",
         header: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,basicWeek,basicDay'
+            "Content-Type": "application/json",
         },
-        defaultDate: '2016-12-12',
-        navLinks: true, // can click day/week names to navigate views
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events
-        events: [{
-                title: 'All Day Event',
-                start: '2016-12-01'
-            },
-            {
-                title: 'Long Event',
-                start: '2016-12-07',
-                end: '2016-12-10'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2016-12-09T16:00:00'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2016-12-16T16:00:00'
-            },
-            {
-                title: 'Conference',
-                start: '2016-12-11',
-                end: '2016-12-13'
-            },
-            {
-                title: 'Meeting',
-                start: '2016-12-12T10:30:00',
-                end: '2016-12-12T12:30:00'
-            },
-            {
-                title: 'Lunch',
-                start: '2016-12-12T12:00:00'
-            },
-            {
-                title: 'Meeting',
-                start: '2016-12-12T14:30:00'
-            },
-            {
-                title: 'Happy Hour',
-                start: '2016-12-12T17:30:00'
-            },
-            {
-                title: 'Dinner',
-                start: '2016-12-12T20:00:00'
-            },
-            {
-                title: 'Birthday Party',
-                start: '2016-12-13T07:00:00'
-            },
-            {
-                title: 'Click for Google',
-                url: 'https://google.com/',
-                start: '2016-12-28'
-            }
-        ]
-    });
+    }).then((response) =>
+        response
+        .json()
+        .then((data) => {
+            calendar = data;
+            console.log("Received Data: ", data);
+            let table = `
+                <table class="table  text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Day</th>
+                            <th scope="col">Assigned Member</th>
+                            <th scope="col">Assigned Garbage</th>
+                            <th class="text-end" scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rowGenerator(data)}
+                    </tbody>
+                </table>
+                `;
+            calendarContainer.insertAdjacentHTML("beforeend", table);
+            let updateBtn = document.querySelectorAll(".update_btn");
 
-});
+            // Update record event
+            for (let i = 0; i < updateBtn.length; i++) {
+                updateBtn[i].addEventListener("click", getId);
+                updateBtn[i].addEventListener("click", openForm_update);
+            }
+        })
+        .catch((error) => {
+            console.error("Error: ", error);
+        })
+    );
+}
+
+function getId(e) {
+    id = e.target.getAttribute("data-val");
+    console.log(id);
+}
+
+function rowGenerator(day) {
+    let rows = "";
+    let i = 1;
+    day.forEach((day) => {
+        let row = `
+                    <tr scope="row">
+                        <td>${day.day}</td>
+                        <td>${day.assigned_user}</td>
+                        <td>${day.assigned_garbage}</td>
+                        <td class="text-end">
+                            <button onclick="openForm_update()" class="update_btn btn btn-success update_member  mx-2" data-val="${day.id}"><i class="m-1 far fa-edit"></i></button>
+                        </td>
+                    </tr>
+                    `;
+
+        rows += row;
+        i++;
+    });
+    return rows;
+}
+
+//INSERT function
+
+// Open and close the insert form
+
+function openForm_update() {
+    document.querySelector(".updateRecordForm").style.display = "block";
+}
+
+function closeForm_update() {
+    document.querySelector(".updateRecordForm").style.display = "none";
+}
+
+// Update row function
+
+function updateRecord() {
+    let assigned_user = document.querySelector("#assigned_user").value;
+    let assigned_garbage = $("#assigned_garbage").val();
+    console.log("Record Updated.");
+    console.log("Id: ", id);
+    console.log("Name: ", assigned_user);
+    console.log("Garbage: ", assigned_garbage);
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("assigned_user", assigned_user);
+    formData.append("assigned_garbage", assigned_garbage);
+
+    fetch("./app/calendar/update.php", {
+        method: "POST",
+        header: {
+            "Content-Type": "application/json",
+        },
+        body: formData,
+    }).then((response) =>
+        response
+        .json()
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error("Error: ", error);
+        })
+    );
+}
+
+function reloadTable() {
+    let table = document.querySelector(".table");
+    calendarContainer.removeChild(table);
+    calendarGenerator();
+}
