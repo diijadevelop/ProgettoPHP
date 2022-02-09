@@ -11,7 +11,6 @@ dselect(document.querySelector("#assigned_garbage"), config);
 let calendar;
 let calendarContainer = document.querySelector(" #calendar_container");
 let ConfirmBtn = document.querySelector("#ConfirmBtn");
-let id;
 
 calendarGenerator();
 ConfirmBtn.addEventListener("click", updateRecord);
@@ -48,21 +47,11 @@ function calendarGenerator() {
             calendarContainer.insertAdjacentHTML("beforeend", table);
             let updateBtn = document.querySelectorAll(".update_btn");
 
-            // Update record event
-            for (let i = 0; i < updateBtn.length; i++) {
-                updateBtn[i].addEventListener("click", getId);
-                updateBtn[i].addEventListener("click", openForm_update);
-            }
         })
         .catch((error) => {
             console.error("Error: ", error);
         })
     );
-}
-
-function getId(e) {
-    id = e.target.getAttribute("data-val");
-    console.log(id);
 }
 
 function rowGenerator(day) {
@@ -75,24 +64,26 @@ function rowGenerator(day) {
                         <td>${day.assigned_user}</td>
                         <td>${day.assigned_garbage}</td>
                         <td class="text-end">
-                            <button onclick="openForm_update()" class="update_btn btn btn-success update_member  mx-2" data-val="${day.id}"><i class="m-1 far fa-edit"></i></button>
+                            <button class="update_btn btn btn-success update_member mx-2" onClick="OpenForm(this.id)" id="${day.id}"><i class="m-1 far fa-edit"></i></button>
                         </td>
                     </tr>
                     `;
-
         rows += row;
         i++;
     });
     return rows;
 }
 
-//INSERT function
-
-// Open and close the insert form
-
-function openForm_update() {
+function OpenForm(e) {
+    id = e;
+    console.log(id);
+    document.querySelector('#hidden').setAttribute("value", id);
     document.querySelector(".updateRecordForm").style.display = "block";
 }
+
+//INSERT function
+
+// Close the insert form
 
 function closeForm_update() {
     document.querySelector(".updateRecordForm").style.display = "none";

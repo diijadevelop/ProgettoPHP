@@ -2,16 +2,15 @@
 require('../../vendor/autoload.php');
 require('../../core/init.php');
 
-use App\Models\Family;
 use Core\Database\App;
 
 $family = App::get('family');
 
-$name = $_POST['name'];
 $id = $_POST['id'];
-
-$family->name = $name;
 $family->id = $id;
+
+$name = $_POST['name'];
+$family->name = $name;
 
 if ($family->update()) {
     echo json_encode([

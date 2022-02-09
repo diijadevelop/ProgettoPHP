@@ -54,20 +54,12 @@ function tableGenerator() {
                 for (let i = 0; i < deleteBtn.length; i++) {
                     deleteBtn[i].addEventListener("click", deleteRecord);
                 }
-                // Update record event 
-                for (let i = 0; i < updateBtn.length; i++) {
-                    updateBtn[i].addEventListener("click", openForm_update);
-                    updateBtn[i].addEventListener("click", getId);
-                }
             })
             .catch((error) => {
                 console.error('Error: ', error);
             }));
 }
 
-function getId(e) {
-    window.id = e.target.getAttribute('data-val');
-}
 
 function rowGenerator(member) {
     let rows = '';
@@ -78,7 +70,7 @@ function rowGenerator(member) {
                         <td>${i}</td>
                         <td>${member.name}</td>
                         <td class="text-end">
-                            <button onclick="openForm_update()" class="update_btn btn btn-success update_member  mx-2" data-val="${member.id}"><i class="m-1 far fa-edit"></i></button>
+                            <button onClick="openForm_update(this.id)" class="update_btn btn btn-success update_member  mx-2" id="${member.id}"><i class="m-1 far fa-edit"></i></button>
                             <button class="delete_btn btn btn-danger delete_member" data-val="${member.id}"><i class="m-1 fas fa-user-minus"></i></button>
                         </td>
                     </tr>
@@ -89,6 +81,15 @@ function rowGenerator(member) {
     });
     return rows;
 }
+
+function openForm_update(e) {
+    id = e;
+    console.log(id);
+    document.querySelector("#hidden_id").setAttribute('value', id);
+
+    document.querySelector(".updateRecordForm").style.display = "block";
+}
+
 
 //INSERT function
 
@@ -122,10 +123,6 @@ function closeForm_insert() {
     document.getElementById("new_row_form").style.display = "none";
 }
 
-function openForm_update() {
-    document.querySelector(".updateRecordForm").style.display = "block";
-}
-
 function closeForm_update() {
     document.querySelector(".updateRecordForm").style.display = "none";
 }
@@ -134,7 +131,6 @@ function closeForm_update() {
 
 function updateRecord() {
     let new_name = document.querySelector("#new_name").value;
-    let id = window.id;
     console.log("Record Updated. Id: ", id);
     console.log("Name: ", new_name);
     const formData = new FormData();

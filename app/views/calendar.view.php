@@ -45,6 +45,7 @@ require('app/views/partials/main-navbar.php');
                     </div>
                     <!-- Form Group End -->
                     <div class="">
+                        <input type="hidden" name="id" id="hidden" value="">
                         <button type="submit" id="ConfirmBtn" onclick="" class="btn btn-success"><i class="m-1 fas fa-check"></i></button>
                         <button class="btn btn-danger" onclick="closeForm_update();event.preventDefault();"><i class="m-1 fas fa-times"></i></button>
                     </div>

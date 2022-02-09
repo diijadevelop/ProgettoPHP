@@ -34,6 +34,7 @@ require('app/views/partials/main-navbar.php');
                         <input type="text" class="form-control" id="new_name" placeholder="Enter the new name">
                     </div>
                     <div>
+                        <input type="hidden" id="hidden_id" value="">
                         <button type="submit" id="updateConfirmBtn" class="btn btn-success"><i class="m-1 fas fa-check"></i></button>
                         <button class="btn btn-danger" onclick="closeForm_update();event.preventDefault();"><i class="m-1 fas fa-times"></i></button>
                     </div>

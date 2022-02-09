@@ -54,7 +54,6 @@ class Family {
         $query="UPDATE {$this->table_name} SET name=:name WHERE id=:id";
         $statement = $this->pdo->prepare($query);
         $this->name = htmlspecialchars(strip_tags($this->name));
-        $this->id = htmlspecialchars(strip_tags($this->id));
         $statement->bindParam(':id', $this->id);
         $statement->bindParam(':name', $this->name);
         try{

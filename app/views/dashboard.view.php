@@ -13,12 +13,12 @@ $select=App::get('calendar')->read();
             <div class="row">
 
                 <div class="col-6">
-                    <h1>Your Calendar</h1>
+                    <h1>Your Dashboard</h1>
                 </div>
 
                 <div class=" col-6 d-flex justify-content-end">
                     <div class="dropdown">
-                        <button class="btn btn-success dropdown-toggle" type="button" id="ViewMenu" data-bs-toggle="dropdown" aria-expanded="false" href="views">Views<i class="mx-2 far fa-clone"></i></button>
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="ViewMenu" data-bs-toggle="dropdown" aria-expanded="false" href="views">Views<i class="mx-2 far fa-clone"></i></button>
                         <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="#ViewMenu">
                             <form method="GET">
                                 <li><input type="submit" value="Day" name="calendar_view" href="#" class="dropdown-item"></li>
@@ -80,7 +80,7 @@ $select=App::get('calendar')->read();
                     <h5 class=\" pb-3 fw-bold\">$assigned_garbage</h5>
                     <p class=\"small\">It's the turn of:</p>
                     <h5 class=\" fw-bold\">$assigned_user</h5>
-                    <p class=\" d-md-none small muted mt-4\"><i class=\"me-2 fas fa-info-circle\"></i>Click on the waste type for get more informations</p>
+                    <p class=\" d-md-none small mt-4\"><i class=\"me-2 fas fa-info-circle\"></i>Click on the waste type for get more informations</p>
                 </div>
                     ";
                 }

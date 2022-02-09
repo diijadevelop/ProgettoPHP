@@ -6,13 +6,14 @@ require('../../core/init.php');
 
 $calendar = App::get('calendar');
 
+$id=$_POST['id'];
+$calendar->id = $id;
+
 $assigned_user=$_POST['assigned_user'];
 $assigned_garbage=$_POST['assigned_garbage'];
-$id=$_POST['id'];
 
 $calendar->assigned_user = $assigned_user;
 $calendar->assigned_garbage = $assigned_garbage;
-$calendar->id = $id;
 
 if($calendar->update()){
     echo json_encode(
