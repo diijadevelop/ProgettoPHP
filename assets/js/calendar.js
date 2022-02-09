@@ -64,7 +64,7 @@ function rowGenerator(day) {
                         <td>${day.assigned_user}</td>
                         <td>${day.assigned_garbage}</td>
                         <td class="text-end">
-                            <button class="update_btn btn btn-success update_member mx-2" onClick="OpenForm(this.id)" id="${day.id}"><i class="m-1 far fa-edit"></i></button>
+                            <button class="update_btn btn btn-success update_member mx-2" onClick="OpenForm(${day.id})"><i class="m-1 far fa-edit"></i></button>
                         </td>
                     </tr>
                     `;

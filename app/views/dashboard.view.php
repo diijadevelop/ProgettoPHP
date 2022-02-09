@@ -1,6 +1,6 @@
 <?php
 require('app/views/partials/main-navbar.php');
-require_once "helpers/calendar-view.php";
+require_once "helpers/views.php";
 
 use Core\Database\App;
 $select=App::get('calendar')->read();
@@ -63,7 +63,6 @@ $select=App::get('calendar')->read();
                     }
                 }
                 ?>
-                <p class="small muted mt-4"><i class="me-2 fas fa-info-circle"></i>Click on the waste type for get more informations</p>
             </div>
         <?php endif ?>
         <?php
@@ -80,7 +79,6 @@ $select=App::get('calendar')->read();
                     <h5 class=\" pb-3 fw-bold\">$assigned_garbage</h5>
                     <p class=\"small\">It's the turn of:</p>
                     <h5 class=\" fw-bold\">$assigned_user</h5>
-                    <p class=\" d-md-none small mt-4\"><i class=\"me-2 fas fa-info-circle\"></i>Click on the waste type for get more informations</p>
                 </div>
                     ";
                 }
@@ -88,7 +86,6 @@ $select=App::get('calendar')->read();
                 <!-- Col End -->                
             </div>
             <!-- Row End -->
-            <p class="text-center w-100 display-none display-md-inline small muted mt-4"><i class="me-2 fas fa-info-circle"></i>Click on the waste type for get more informations</p>
         <?php endif ?>
     </div>
     <!-- Main End -->

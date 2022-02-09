@@ -1,6 +1,4 @@
 <?php
-
-use Core\Database\QueryBuilder;
 use Core\Router\Router;
 use Core\Router\Request;
 

@@ -1,12 +1,3 @@
-// const config = {
-//     search: false, // Toggle search feature. Default: false
-//     creatable: false, // Creatable selection. Default: false
-//     clearable: false, // Clearable selection. Default: false
-//     multiple: true,
-//     maxHeight: '360px', // Max height for showing scrollbar. Default: 360px
-//     size: '', // Can be "sm" or "lg". Default ''
-// }
-// dselect(document.querySelector('#assigned_day'), config)
 // Variables
 let family;
 let tableContainer = document.querySelector(" #table_container");
@@ -33,7 +24,7 @@ function tableGenerator() {
                 family = data;
                 console.log('Received Data: ', data);
                 let table = `
-                <table class="table  text-center">
+                <table class="table text-center">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -47,13 +38,7 @@ function tableGenerator() {
                 </table>
                 `;
                 tableContainer.insertAdjacentHTML('beforeend', table);
-                let deleteBtn = document.querySelectorAll(".delete_btn");
-                let updateBtn = document.querySelectorAll(".update_btn");
 
-                // Delete record event
-                for (let i = 0; i < deleteBtn.length; i++) {
-                    deleteBtn[i].addEventListener("click", deleteRecord);
-                }
             })
             .catch((error) => {
                 console.error('Error: ', error);
@@ -70,8 +55,8 @@ function rowGenerator(member) {
                         <td>${i}</td>
                         <td>${member.name}</td>
                         <td class="text-end">
-                            <button onClick="openForm_update(this.id)" class="update_btn btn btn-success update_member  mx-2" id="${member.id}"><i class="m-1 far fa-edit"></i></button>
-                            <button class="delete_btn btn btn-danger delete_member" data-val="${member.id}"><i class="m-1 fas fa-user-minus"></i></button>
+                            <button onClick="openForm_update(${member.id})" class="update_btn btn btn-success update_member  mx-2"}"><i class="m-1 far fa-edit"></i></button>
+                            <button onClick="deleteRecord(${member.id})" class="delete_btn btn btn-danger delete_member"><i class="m-1 fas fa-user-minus"></i></button>
                         </td>
                     </tr>
                     `;
@@ -154,8 +139,7 @@ function updateRecord() {
 }
 
 function deleteRecord(e) {
-    let id = e.target.getAttribute('data-val');
-    console.log("Record Deleted: ", e.target.getAttribute('data-val'));
+    id = e;
     const formData = new FormData();
     formData.append('id', id);
 

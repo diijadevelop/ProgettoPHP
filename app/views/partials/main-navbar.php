@@ -1,6 +1,6 @@
 <?php
 require "head.php";
-require_once "helpers/calendar-view.php";
+require_once "helpers/views.php";
 ?>
 
 <body>

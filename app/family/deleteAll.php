@@ -3,10 +3,8 @@ require('../../vendor/autoload.php');
 require('../../core/init.php');
 
 use Core\Database\App;
-use App\Models\Family;
 
-$family = new Family($pdo);
-
+$family = App::get('family');
 
 if ($family->truncateTable()) {
     echo json_encode([

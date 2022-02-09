@@ -1,6 +1,6 @@
 <?php
 require('app/views/partials/head.php');
-require_once "helpers/calendar-view.php";
+require_once "helpers/views.php";
 
 ?>
 <div class="container d-flex align-items-center min-vh-100">
@@ -16,7 +16,7 @@ require_once "helpers/calendar-view.php";
         <p class="">Now you can check if it's your turn to take out the garbage &#128513;</p>
         <div class="card-wrapper container-fluid pt-4">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card mb-3">
                         <i class="mt-4 fas fa-tachometer-alt"></i>
                         <div class="card-body">
@@ -27,7 +27,7 @@ require_once "helpers/calendar-view.php";
                     </div>
                 </div>
                 <!-- Card Dashboard End -->
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card mb-3">
                         <i class="mt-4 fas fa-users"></i>
                         <div class="card-body">
@@ -38,7 +38,7 @@ require_once "helpers/calendar-view.php";
                     </div>
                 </div>
                 <!-- Card Edit Your Crew End -->
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card mb-3">
                     <i class="mt-4 fas fa-calendar-plus"></i>
                         <div class="card-body">
@@ -49,17 +49,6 @@ require_once "helpers/calendar-view.php";
                     </div>
                 </div>
                 <!-- Card Edit Your Calendar End -->
-                <div class="col-md-3">
-                    <div class="card mb-3">
-                        <i class="mt-4 fas fa-info-circle"></i>
-                        <div class="card-body">
-                            <h5 class="card-title">Good Info</h5>
-                            <p class="small card-text text-dark fw-bold">Some useful info about your garbage.</p>
-                            <a href="info" class="stretched-link"></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card Good Info End -->
             </div>
             <!-- Row End -->
         </div>

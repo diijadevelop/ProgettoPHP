@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Controllers;
-use Core\Database\App;
-// use App\Models\Post;
 
 class PagesController
 {
@@ -25,4 +23,5 @@ class PagesController
     {
         return view('calendar');
     }
+ 
 }
